@@ -2,13 +2,17 @@
   <div class="text-center">
    <h1>Cocktails List</h1>
 
-
     <div class="container">
       <% @cocktails.each do |cocktail| %>
-        <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-info btn-lg" %></h2>
+
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo ? (cl_image_path cocktail.photo.path, height: 150, width: 300, crop: :fill) : "http://img.fac.pmdstatic.net/fit/http.3A.2F.2Fwww.2Efemmeactuelle.2Efr.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Fsante.2Fmedecine-douce.2Fcocktail-antioxydants-00444.2F7589816-3-fre-FR.2F5-recettes-de-cocktails-antioxydants.2Ejpg/750x562/crop-from/center/5-recettes-de-cocktails-antioxydants.jpeg" %>')">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to cocktail.name, cocktail_path(cocktail)%>
+        </div>
+
       <% end %>
-
-
     </div>
   </div>
   <div class="text-center">
