@@ -2,6 +2,6 @@ class Ingredient < ApplicationRecord
   has_many :doses
 
   def to_s
-    '#{name}'
+    "#{name}"
   end
 end
